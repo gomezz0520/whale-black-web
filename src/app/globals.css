@@ -1,0 +1,221 @@
+/* ─────────────────────────────────────────────────────────────
+   ESTILOS DE WHALE BLACK
+   Colores y medidas tomados del diseño aprobado (whale-black-inicio.html).
+   Para cambiar un color en toda la página, cámbialo aquí arriba.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --fondo: #0B0B0C;
+  --fondo-tarjeta: #161618;
+  --texto: #EDEDED;
+  --texto-medio: #B4B4B8;
+  --texto-suave: #A3A3A8;
+  --acento: #9CC7E8;
+  --linea: #222224;
+  --linea-tarjeta: #262628;
+}
+
+/* ── Base ── */
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fondo); }
+a { color: var(--texto); text-decoration: none; }
+a:hover { color: #FFFFFF; }
+p { margin: 0; }
+
+.pagina {
+  font-family: var(--fuente-texto), Inter, system-ui, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+  min-height: 100vh;
+}
+.contenedor { max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.etiqueta { font-size: 13px; font-weight: 600; letter-spacing: 0.2em; color: var(--acento); }
+.titulo-seccion {
+  margin: 0;
+  font-family: var(--fuente-titulos), "Space Grotesk", sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
+  letter-spacing: -0.01em;
+}
+.texto-suave { font-size: 15px; color: var(--texto-suave); }
+
+/* ── Botones ── */
+.botones { display: flex; flex-wrap: wrap; gap: 12px; }
+.boton-claro, .boton-borde {
+  font: inherit; font-weight: 600; font-size: 16px;
+  padding: 16px 28px; border-radius: 999px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.boton-claro { background: #F2F2F2; color: var(--fondo); border: 0; }
+.boton-claro:hover { color: var(--fondo); background: #FFFFFF; }
+.boton-borde { border: 1px solid #444448; background: transparent; color: var(--texto); }
+.boton-icono {
+  position: relative; width: 44px; height: 44px; border-radius: 22px;
+  border: 1px solid #333336; background: transparent; color: var(--texto);
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.contador-bolsa {
+  position: absolute; top: -4px; right: -4px; min-width: 20px; height: 20px; padding: 0 5px;
+  border-radius: 10px; background: var(--acento); color: var(--fondo);
+  font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center;
+}
+:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
+
+/* ── Encabezado ── */
+.encabezado {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(11, 11, 12, 0.92); border-bottom: 1px solid var(--linea);
+}
+.encabezado-fila {
+  padding-top: 16px; padding-bottom: 16px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+}
+.logo {
+  font-family: var(--fuente-titulos), "Space Grotesk", sans-serif;
+  font-weight: 700; font-size: 22px; letter-spacing: 0.18em;
+}
+.menu { display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; font-weight: 500; }
+
+/* ── Portada ── */
+.portada { padding-top: 96px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 28px; }
+.portada-titulo {
+  margin: 0; font-family: var(--fuente-titulos), "Space Grotesk", sans-serif; font-weight: 700;
+  font-size: clamp(44px, 7vw, 96px); line-height: 0.98; letter-spacing: -0.02em; max-width: 900px;
+}
+.portada-texto { font-size: 19px; line-height: 1.55; color: var(--texto-medio); max-width: 600px; }
+
+/* ── Beneficios ── */
+.beneficios { border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea); }
+.beneficios-grilla {
+  padding-top: 28px; padding-bottom: 28px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;
+}
+.beneficio { display: flex; gap: 14px; align-items: flex-start; }
+.beneficio-titulo { font-weight: 600; font-size: 15px; }
+.beneficio-detalle { margin-top: 4px; font-size: 14px; color: var(--texto-suave); }
+
+/* ── Perchero ── */
+.perchero { padding-top: 96px; padding-bottom: 48px; }
+.perchero-encabezado { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; }
+.perchero-barra-zona { margin-top: 56px; position: relative; }
+.perchero-barra { height: 6px; border-radius: 3px; background: #6E6E73; }
+.perchero-grilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 32px 24px; }
+.perchero-item { display: flex; flex-direction: column; align-items: center; }
+.perchero-nombre { margin-top: 18px; font-weight: 600; font-size: 15px; text-align: center; }
+.perchero-nombre:hover { text-decoration: underline; text-underline-offset: 4px; }
+.perchero-ayuda { margin-top: 4px; font-size: 13px; color: var(--texto-suave); }
+.perchero-precio { margin-top: 8px; font-size: 15px; font-weight: 600; }
+
+/* La camiseta que se balancea y se voltea (igual que el diseño). */
+.sway {
+  width: 100%; display: flex; flex-direction: column; align-items: center;
+  transform-origin: 50% 0; animation: sway 5s ease-in-out infinite;
+}
+.shirt {
+  perspective: 1200px; background: none; border: 0; padding: 0; margin: 0;
+  cursor: pointer; color: inherit; font: inherit; text-align: center; width: 100%;
+}
+.shirt:focus-visible { outline: 2px solid var(--acento); outline-offset: 6px; border-radius: 12px; }
+.inner {
+  position: relative; width: 100%; aspect-ratio: 200 / 250;
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); transform-style: preserve-3d;
+}
+.shirt.flipped .inner { transform: rotateY(180deg); }
+/* Girar al pasar el cursor solo en equipos con mouse; en celular se gira al tocar. */
+@media (hover: hover) {
+  .shirt:hover .inner { transform: rotateY(180deg); }
+}
+.face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.back { transform: rotateY(180deg); }
+@keyframes sway { 0%, 100% { transform: rotate(-1.4deg); } 50% { transform: rotate(1.4deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .sway { animation: none; }
+  .inner { transition: none; }
+}
+
+/* ── Categorías ── */
+.categorias { padding-top: 72px; padding-bottom: 72px; }
+.categorias-grilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.tarjeta-categoria {
+  background: var(--fondo-tarjeta); border: 1px solid var(--linea-tarjeta); border-radius: 16px;
+  overflow: hidden; display: flex; flex-direction: column;
+}
+.tarjeta-foto {
+  height: 220px; background: #1E1E21; display: flex; align-items: center; justify-content: center;
+  color: #8E8E93; font-size: 13px; letter-spacing: 0.08em;
+}
+.tarjeta-pie { padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 17px; }
+
+/* ── Probador ── */
+.probador-zona { padding-top: 24px; padding-bottom: 96px; }
+.probador {
+  background: #141416; border: 1px solid var(--linea-tarjeta); border-radius: 24px;
+  padding: clamp(32px, 5vw, 64px);
+  display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between;
+}
+.probador-texto { flex: 1 1 420px; display: flex; flex-direction: column; gap: 16px; }
+.probador-titulo {
+  margin: 0; font-family: var(--fuente-titulos), "Space Grotesk", sans-serif;
+  font-size: clamp(30px, 3.6vw, 46px); letter-spacing: -0.01em;
+}
+.probador-detalle { font-size: 17px; line-height: 1.55; color: var(--texto-medio); }
+.probador-vista {
+  flex: 0 1 300px; height: 300px; border-radius: 20px; border: 1px dashed #4A4A4E;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+  color: var(--texto-suave);
+}
+
+/* ── Pie de página ── */
+.pie { border-top: 1px solid var(--linea); }
+.pie-fila { padding-top: 56px; padding-bottom: 56px; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; }
+.pie-marca { display: flex; flex-direction: column; gap: 12px; max-width: 360px; }
+.pie-marca p { font-size: 14px; line-height: 1.6; color: var(--texto-suave); }
+.pie-columnas { display: flex; flex-wrap: wrap; gap: 48px; font-size: 14px; }
+.pie-columna { display: flex; flex-direction: column; gap: 10px; }
+.pie-columna a { color: var(--texto-suave); }
+.pie-columna a:hover { color: #FFFFFF; }
+.pie-columna-titulo { font-weight: 600; }
+
+/* ── Ficha de producto (página nueva) ── */
+.ficha { padding-top: 48px; padding-bottom: 96px; }
+.volver { font-size: 14px; color: var(--texto-suave); }
+.ficha-fila { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start; }
+.ficha-imagen { flex: 1 1 320px; max-width: 460px; display: flex; flex-direction: column; gap: 16px; }
+.ficha-info { flex: 1 1 340px; display: flex; flex-direction: column; gap: 18px; }
+.ficha-precio { font-size: 22px; font-weight: 600; }
+.ficha-compra { display: flex; flex-direction: column; gap: 24px; margin-top: 8px; }
+.tallas { border: 0; padding: 0; margin: 0; }
+.tallas legend { font-weight: 600; font-size: 15px; margin-bottom: 12px; }
+.tallas-opciones { display: flex; flex-wrap: wrap; gap: 10px; }
+.talla {
+  min-width: 52px; height: 48px; padding: 0 16px; border-radius: 12px; cursor: pointer;
+  border: 1px solid #333336; background: transparent; color: var(--texto); font: inherit; font-weight: 600;
+}
+.talla.elegida { background: #F2F2F2; color: var(--fondo); border-color: #F2F2F2; }
+.aviso { margin-top: 10px; font-size: 14px; color: #F2A7A7; }
+.confirmacion { font-size: 14px; color: var(--texto-medio); min-height: 20px; }
+.confirmacion a { text-decoration: underline; text-underline-offset: 3px; }
+.ficha-beneficios {
+  margin: 8px 0 0; padding: 20px 0 0 18px; border-top: 1px solid var(--linea);
+  display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--texto-suave);
+}
+
+/* ── Bolsa de compras (página nueva) ── */
+.bolsa { padding-top: 72px; padding-bottom: 96px; }
+.bolsa-vacia { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+.bolsa-fila { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+.bolsa-lista { flex: 1 1 480px; list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linea); }
+.bolsa-item { display: flex; align-items: center; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--linea); }
+.bolsa-miniatura { width: 72px; flex-shrink: 0; aspect-ratio: 200 / 250; }
+.bolsa-nombre { display: block; font-weight: 600; font-size: 16px; margin-bottom: 4px; }
+.cantidad { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+.cantidad button {
+  width: 36px; height: 36px; border-radius: 18px; border: 1px solid #333336;
+  background: transparent; color: var(--texto); font-size: 18px; cursor: pointer;
+}
+.bolsa-resumen {
+  flex: 0 1 340px; background: #141416; border: 1px solid var(--linea-tarjeta); border-radius: 20px;
+  padding: 28px; display: flex; flex-direction: column; gap: 18px;
+}
+.bolsa-total { display: flex; justify-content: space-between; font-weight: 600; font-size: 18px; }
+.bolsa-resumen .boton-claro { justify-content: center; }
