@@ -75,6 +75,31 @@ p { margin: 0; }
   font-weight: 700; font-size: 22px; letter-spacing: 0.18em;
 }
 .menu { display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; font-weight: 500; }
+.encabezado-botones { display: flex; gap: 8px; }
+.boton-menu { display: none; }
+
+/* Celular y tablet: el menú se esconde detrás del botón de tres rayas. */
+@media (max-width: 899px) {
+  .encabezado-fila { flex-wrap: nowrap; padding-top: 12px; padding-bottom: 12px; gap: 12px; }
+  .logo { font-size: 17px; letter-spacing: 0.14em; white-space: nowrap; }
+  .encabezado-botones { gap: 4px; flex-shrink: 0; }
+  .boton-menu { display: flex; }
+  .menu {
+    display: none;
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; flex-wrap: nowrap; gap: 0;
+    padding: 8px 24px 20px;
+    background: var(--fondo); border-bottom: 1px solid var(--linea);
+    font-size: 18px;
+  }
+  .menu.abierto { display: flex; }
+  .menu a { padding: 14px 0; border-bottom: 1px solid var(--linea); }
+  .menu a:last-child { border-bottom: 0; }
+}
+@media (max-width: 370px) {
+  .logo { font-size: 15px; letter-spacing: 0.12em; }
+  .boton-icono { width: 40px; height: 40px; }
+}
 
 /* ── Portada ── */
 .portada { padding-top: 96px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 28px; }

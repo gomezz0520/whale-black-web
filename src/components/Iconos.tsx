@@ -91,3 +91,22 @@ export function IconoGancho() {
     </svg>
   );
 }
+
+export function IconoMenu() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" strokeWidth="2" {...base}>
+      <path d="M4 7h16" />
+      <path d="M4 12h16" />
+      <path d="M4 17h16" />
+    </svg>
+  );
+}
+
+export function IconoCerrar() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" strokeWidth="2" {...base}>
+      <path d="M6 6l12 12" />
+      <path d="M18 6L6 18" />
+    </svg>
+  );
+}
